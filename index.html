@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTT Net | Enterprise Business Wireless Internet</title>
+    <title>TTT Net | Enterprise Wireless Internet by TTT Enterprises LLC</title>
     <style>
         :root {
             --bg-dark: #090d16;
-            --bg-card: rgba(22, 27, 34, 0.7);
-            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-card: rgba(22, 27, 34, 0.75);
+            --border-color: rgba(255, 255, 255, 0.12);
             --accent-blue: #00d2ff;
             --accent-purple: #3a7bd5;
             --text-main: #f0f6fc;
@@ -36,38 +36,73 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 8%;
+            padding: 20px 8%;
             border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 13, 22, 0.8);
+            background: rgba(9, 13, 22, 0.85);
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 0%, var(--accent-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        .nav-badge {
-            font-size: 0.8rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 20px;
+        .brand-logo {
+            height: 48px;
+            width: auto;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .parent-tag {
+            font-size: 0.7rem;
             color: var(--text-muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--accent-blue);
+            background: rgba(0, 210, 255, 0.08);
+        }
+
+        .nav-btn.primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 850px) {
+            nav { flex-direction: column; gap: 16px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
         }
 
         .hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            padding: 80px 8%;
+            gap: 50px;
+            padding: 60px 8%;
             max-width: 1300px;
             margin: 0 auto;
             align-items: center;
@@ -85,12 +120,12 @@
             font-size: 0.85rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border: 1px solid rgba(0, 210, 255, 0.3);
         }
 
         h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 20px;
@@ -104,9 +139,47 @@
         }
 
         p.subtitle {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+        }
+
+        .contact-action-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .contact-action-bar { justify-content: center; }
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .action-btn.call {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .action-btn.sms {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
         }
 
         .partner-badge {
@@ -129,47 +202,45 @@
         .cta-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 36px;
+            padding: 32px;
             border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             backdrop-filter: blur(12px);
         }
 
         .cta-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 8px;
         }
 
         .cta-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
+            font-size: 0.88rem;
+            margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         input {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 16px;
             border-radius: 8px;
             background: rgba(9, 13, 22, 0.6);
             border: 1px solid var(--border-color);
             color: #fff;
             font-size: 0.95rem;
-            transition: all 0.2s;
         }
 
         input:focus {
             outline: none;
             border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
         }
 
-        button {
+        button.submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             border-radius: 8px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             color: #fff;
@@ -177,23 +248,54 @@
             font-size: 1rem;
             border: none;
             cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
-        button:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
+        .portal-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 8%;
+            margin: 40px 0;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .portal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+
+        .portal-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .portal-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--accent-blue);
+        }
+
+        .portal-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .section-title {
             text-align: center;
-            margin: 100px 0 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
+            margin: 60px 0 40px;
         }
 
         .grid-3 {
@@ -205,91 +307,61 @@
             margin: 0 auto;
         }
 
-        .feature-card, .plan-card {
+        .feature-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 32px;
+            padding: 28px;
             border-radius: 12px;
-            transition: border-color 0.3s;
-        }
-
-        .feature-card:hover, .plan-card:hover {
-            border-color: rgba(0, 210, 255, 0.4);
-        }
-
-        .feature-icon {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-            display: inline-block;
-        }
-
-        .plan-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
-        .plan-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent-blue);
-            margin-bottom: 16px;
-        }
-
-        .plan-price span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .plan-features li {
-            padding: 8px 0;
-            color: var(--text-muted);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-        }
-
-        .plan-features li::before {
-            content: "✓ ";
-            color: var(--accent-blue);
-            font-weight: bold;
         }
 
         footer {
-            margin-top: 120px;
+            margin-top: 80px;
             padding: 40px 8%;
             border-top: 1px solid var(--border-color);
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
         }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TTT NET</div>
-        <div class="nav-badge">Commercial Services Only</div>
+        <div class="logo-group">
+            <img src="tttnetlogo.png" alt="TTT Net Logo" class="brand-logo">
+            <div class="parent-tag">A Division of TTT Enterprises LLC</div>
+        </div>
+        <div class="nav-links">
+            <a href="https://support.ttthelpdesk.com/" target="_blank" class="nav-btn">Help Desk</a>
+            <a href="https://billing.ttt-enterprises-llc.com/" target="_blank" class="nav-btn">Billing Portal</a>
+            <a href="https://outlook.office.com/book/TTTEnterprisesLLC@tttenterprisesllc.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" class="nav-btn primary">Schedule Meeting</a>
+        </div>
     </nav>
 
     <section class="hero-container">
         <div>
-            <div class="tag">Next-Gen Business Connectivity</div>
-            <h1>Reliable Wireless Internet for <span class="highlight">Modern Enterprises</span></h1>
-            <p class="subtitle">Bypass legacy cable gridlock. Deploy enterprise-grade high-speed wireless business internet in days—not months.</p>
+            <div class="tag">Commercial Wireless Internet</div>
+            <h1>Enterprise Wireless Built for <span class="highlight">Business Operations</span></h1>
+            <p class="subtitle">White-label wireless connectivity delivered on Verizon SMB Tier-1 cellular infrastructure. High speed, low latency, and rapid deployment nationwide.</p>
             
+            <div class="contact-action-bar">
+                <a href="tel:+16788272832" class="action-btn call">📞 Call +1 (678) 827-2832</a>
+                <a href="sms:+16788272832" class="action-btn sms">💬 Text Us Direct</a>
+            </div>
+
             <div class="partner-badge">
-                <span>⚡ Powered by America's Leading Tier-1 Business Cellular Network</span>
+                <span>⚡ Powered by Verizon SMB Enterprise Cellular Infrastructure</span>
             </div>
         </div>
 
         <div class="cta-card">
-            <h3>Check Location Eligibility</h3>
-            <p>Get a custom quote and coverage assessment for your business site within 24 hours.</p>
+            <h3>Check Business Coverage</h3>
+            <p>Request a site qualification and custom pricing for your location.</p>
             
             <form action="#" method="POST">
                 <div class="form-group">
@@ -304,73 +376,55 @@
                 <div class="form-group">
                     <input type="text" placeholder="Service Address or Zip Code" required>
                 </div>
-                <button type="submit">Check Business Coverage</button>
+                <button type="submit" class="submit-btn">Request Site Assessment</button>
             </form>
         </div>
     </section>
 
-    <div class="section-title">
-        <h2>Built Exclusively for Business Use</h2>
-        <p style="color: var(--text-muted);">No residential slowdowns, data deprioritization, or long delays.</p>
-    </div>
-
-    <section class="grid-3">
-        <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Rapid Site Deployment</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Avoid waiting 60+ days for fiber line trenching. Plug-and-play enterprise routers shipped pre-configured directly to your location.</p>
+    <!-- Client Quick Hub Section -->
+    <section class="portal-section">
+        <div style="max-width: 1300px; margin: 0 auto 20px; text-align: center;">
+            <h3 style="font-size: 1.2rem;">Existing Client Quick Hub</h3>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>99.9% Network Continuity</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Ideal as a high-speed primary pipe or automatic cellular failover backup to ensure POS systems and critical operations never drop off.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">💼</div>
-            <h3>Commercial SLA Guarantee</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Dedicated business customer support, guaranteed traffic priority, and enterprise-grade network stability standard with every plan.</p>
+        <div class="portal-grid">
+            <a href="https://billing.ttt-enterprises-llc.com/" target="_blank" class="portal-card">
+                <h4>💳 Account & Billing</h4>
+                <p>Pay invoices, view billing history, and manage active service accounts.</p>
+            </a>
+            <a href="https://support.ttthelpdesk.com/" target="_blank" class="portal-card">
+                <h4>🛠️ Technical Support</h4>
+                <p>Submit help desk tickets, check network status, and track requests.</p>
+            </a>
+            <a href="https://outlook.office.com/book/TTTEnterprisesLLC@tttenterprisesllc.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" class="portal-card">
+                <h4>📅 Book Consultation</h4>
+                <p>Schedule a technical call or account review with our engineering team.</p>
+            </a>
         </div>
     </section>
 
     <div class="section-title">
-        <h2>Tailored Business Wireless Solutions</h2>
+        <h2>Enterprise Connectivity Solutions</h2>
     </div>
 
     <section class="grid-3">
-        <div class="plan-card">
-            <h3>Primary Business Internet</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Fast main connection for offices & storefronts.</p>
-            <ul class="plan-features">
-                <li>High-Speed LTE/5G Business Speeds</li>
-                <li>Commercial Static IP Available</li>
-                <li>Unlimited Data Options</li>
-                <li>Pre-Configured Hardware Included</li>
-            </ul>
+        <div class="feature-card">
+            <h3 style="margin-bottom: 10px; color: var(--accent-blue);">Primary Business Internet</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Deploy reliable, high-speed connection for offices, retail storefronts, and pop-up locations without long installation delays.</p>
         </div>
-        <div class="plan-card">
-            <h3>Failover & Backup</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Never drop offline when main cable/fiber cuts out.</p>
-            <ul class="plan-features">
-                <li>Automatic WAN Failover Switching</li>
-                <li>Keeps POS & Cloud Apps Active</li>
-                <li>Low Standby Monthly Cost</li>
-                <li>Zero-Touch Deployment</li>
-            </ul>
+        <div class="feature-card">
+            <h3 style="margin-bottom: 10px; color: var(--accent-blue);">Automated Failover Backup</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Keep your point-of-sale systems, cloud applications, and security hardware online during wired fiber or cable outages.</p>
         </div>
-        <div class="plan-card">
-            <h3>Temporary & Pop-Up</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">For construction sites, events, or field offices.</p>
-            <ul class="plan-features">
-                <li>Flexible Short-Term Agreements</li>
-                <li>Ruggedized Outdoor Hardware</li>
-                <li>Instant Setup out of the box</li>
-                <li>Nationwide Coverage</li>
-            </ul>
+        <div class="feature-card">
+            <h3 style="margin-bottom: 10px; color: var(--accent-blue);">Field & Construction Sites</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Ruggedized, plug-and-play wireless hardware engineered for temporary job sites and mobile operations.</p>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 TTT Net. All rights reserved. Commercial Business Wireless Solutions.
+        &copy; 2026 TTT Enterprises LLC. All rights reserved. <br>
+        <strong>TTT Net</strong> is a specialized business internet solution operated by TTT Enterprises LLC. <br>
+        Direct Line: <a href="tel:+16788272832">+1 (678) 827-2832</a> | <a href="https://support.ttthelpdesk.com/">Support Helpdesk</a>
     </footer>
 
 </body>
